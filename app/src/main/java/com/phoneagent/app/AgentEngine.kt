@@ -134,7 +134,7 @@ class AgentEngine(private val context: Context) {
                 if (step >= MAX_MODEL_ROUNDS) return@withContext "Stopped: too many steps."
                 response = conversation.sendMessage(Message.tool(Contents.of(results)))
             }
-            response.text.toString().ifBlank { "Done." }
+            response.toString().ifBlank { "Done." }
         }
     }
 
