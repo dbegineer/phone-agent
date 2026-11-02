@@ -35,7 +35,7 @@ kotlin {
 
 dependencies {
     implementation(project(":core"))
-    // Pin this to a fixed version once the first build succeeds.
-    implementation("com.google.ai.edge.litertlm:litertlm-android:latest.release")
+    // Requires Kotlin 2.4+ (library metadata version).
+    implementation("com.google.ai.edge.litertlm:litertlm-android:0.19.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
 }

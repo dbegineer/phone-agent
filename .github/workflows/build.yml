@@ -20,7 +20,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.10.2"
+          gradle-version: "8.14.3"
 
       - name: Safety unit tests and debug APK
         run: gradle --no-daemon --stacktrace :core:test :app:assembleDebug
