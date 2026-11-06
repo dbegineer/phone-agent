@@ -14,5 +14,8 @@ kotlin {
 }
 
 dependencies {
+    // Android provides org.json at runtime; JVM tests need the jar.
+    compileOnly("org.json:json:20240303")
+    testImplementation("org.json:json:20240303")
     testImplementation("junit:junit:4.13.2")
 }

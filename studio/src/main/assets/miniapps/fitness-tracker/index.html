@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitness Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Fitness Tracker</h1>
+  <section class="card">
+    <div class="row">
+      <select id="type">
+        <option>Walk</option><option>Run</option><option>Gym</option>
+        <option>Yoga</option><option>Cycling</option><option>Other</option>
+      </select>
+      <input id="minutes" type="number" min="1" max="600" inputmode="numeric" placeholder="Minutes">
+      <button id="add" type="button">Add</button>
+    </div>
+    <p id="msg" class="muted"></p>
+  </section>
+  <section class="card">
+    <h2>Last 7 days (minutes)</h2>
+    <div id="chart" class="chart"></div>
+    <p id="total" class="muted"></p>
+  </section>
+  <section class="card">
+    <h2>Recent</h2>
+    <ul id="list"></ul>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

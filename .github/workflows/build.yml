@@ -22,8 +22,8 @@ jobs:
         with:
           gradle-version: "8.14.3"
 
-      - name: Safety unit tests and debug APK
-        run: gradle --no-daemon --stacktrace :core:test :app:assembleDebug
+      - name: Unit tests and debug APKs
+        run: gradle --no-daemon --stacktrace :core:test :app:assembleDebug :studio:assembleDebug
 
       - name: Upload test report
         if: always()
@@ -38,3 +38,9 @@ jobs:
         with:
           name: phone-agent-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Upload Studio APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-debug-apk
+          path: studio/build/outputs/apk/debug/studio-debug.apk

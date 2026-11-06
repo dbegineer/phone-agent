@@ -1,0 +1,8 @@
+{
+  "id": "fitness-tracker",
+  "name": "Fitness Tracker",
+  "version": "1.0.0",
+  "description": "Log workouts and see your last 7 days.",
+  "permissions": ["storage", "notifications"],
+  "entry": "index.html"
+}
