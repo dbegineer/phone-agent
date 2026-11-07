@@ -59,4 +59,11 @@ class TriageTest {
         assertEquals(3, d.drain().size)
         assertEquals(0, d.size())
     }
+
+    @Test fun quietWindowWrapsPastMidnight() {
+        assertTrue(Quiet.isQuiet(23, 22, 7)); assertTrue(Quiet.isQuiet(3, 22, 7))
+        assertFalse(Quiet.isQuiet(7, 22, 7)); assertFalse(Quiet.isQuiet(12, 22, 7))
+        assertTrue(Quiet.isQuiet(13, 12, 14)); assertFalse(Quiet.isQuiet(14, 12, 14))
+        assertFalse(Quiet.isQuiet(5, 5, 5))
+    }
 }

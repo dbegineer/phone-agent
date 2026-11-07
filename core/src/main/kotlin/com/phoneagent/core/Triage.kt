@@ -60,3 +60,12 @@ class Digest(private val max: Int = 200) {
     fun bySender(): Map<String, Int> = items.groupingBy { it.sender }.eachCount()
     fun drain(): List<Incoming> = items.toList().also { items.clear() }
 }
+
+object Quiet {
+    /** True if [hour] (0-23) falls in the quiet window; the window may wrap past midnight. */
+    fun isQuiet(hour: Int, start: Int, end: Int): Boolean = when {
+        start == end -> false
+        start < end -> hour in start until end
+        else -> hour >= start || hour < end
+    }
+}
